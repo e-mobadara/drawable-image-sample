@@ -2,8 +2,10 @@ package com.mobadara.rick.drawable_image_sample.screen;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 
 import com.example.emobadaragaminglib.Base.Game;
+import com.example.emobadaragaminglib.Base.Graphics;
 import com.example.emobadaragaminglib.Base.Screen;
 import com.example.emobadaragaminglib.Components.DrawFinishListener;
 import com.example.emobadaragaminglib.Components.DrawableImage;
@@ -19,7 +21,8 @@ public class MainScreen extends Screen implements DrawFinishListener {
     public MainScreen(Game game) {
         super(game);
         //Adding the background
-        addSprite(new Sprite(Background.bg,0,0,game.getGraphics().getHeight(),game.getGraphics().getWidth()));
+        //Dont add sprites they dont show
+        //addSprite(new Sprite(Background.bg,0,0,game.getGraphics().getHeight(),game.getGraphics().getWidth()));
 
 
         //The drawableImage needs a bitmap. Let's create one from the R.drawable
@@ -34,6 +37,12 @@ public class MainScreen extends Screen implements DrawFinishListener {
 
     @Override
     public void render(float deltaTime) {
+        //For your background use this instead
+        Graphics g = game.getGraphics();
+        g.drawARGB(255, 20, 120, 40);
+        g.drawARGB(255, 20, 120, 40);
+        g.drawRect(700, 380, 100, 100, Color.RED);
+// u can also use g.drawImage() 
         mDrawableImage.draw(this.game);
     }
 
