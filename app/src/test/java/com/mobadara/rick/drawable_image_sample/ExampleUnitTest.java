@@ -1,4 +1,4 @@
-package com.mobadara.selma.drawable_image_sample;
+package com.mobadara.rick.drawable_image_sample;
 
 import org.junit.Test;
 

@@ -1,16 +1,17 @@
-package com.mobadara.selma.drawable_image_sample.activities;
+package com.mobadara.rick.drawable_image_sample.activities;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-
+import com.example.emobadaragaminglib.Base.Graphics;
 import com.example.emobadaragaminglib.Base.Screen;
 import com.example.emobadaragaminglib.Implementation.AndroidGame;
-import com.mobadara.selma.drawable_image_sample.R;
+import com.mobadara.rick.drawable_image_sample.R;
+import com.mobadara.rick.drawable_image_sample.assets.Background;
+import com.mobadara.rick.drawable_image_sample.screen.MainScreen;
 
 public class MainActivity extends AndroidGame {
 
     @Override
     public Screen getInitScreen() {
-        return null;
+        Background.bg = getGraphics().newImage(R.drawable.franky, Graphics.ImageFormat.ARGB8888,getResources());
+        return new MainScreen(this);
     }
 }
